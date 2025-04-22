@@ -1,0 +1,40 @@
+# <tgsgapcloser:1.2.1 | KaiyuanHan | 2025-04-22>
+INFO  :   Run tgsgapcloser. from . ;
+          Version : 1.2.1 ;
+          Release time : 2022-12-30 .
+
+INFO  :   Parsing args starting ...
+Usage:
+      tgsgapcloser  --scaff SCAFF_FILE --reads TGS_READS_FILE --output OUT_PREFIX [options...]
+      required :
+          --scaff     <scaffold_file>      input scaffold file.
+          --reads     <tgs_reads_file>     input TGS read file.
+          --output    <output_prefix>      output prefix.
+      part required :
+          --ne                             do not correct errors. off by default.
+          or
+          --racon     <racon>              installed racon path.
+          or
+          --ngs       <ngs_reads>          ngs reads used for pilon
+          --pilon     <pilon>              installed pilon path.
+          --samtools  <samtools>           installed samtools path.
+          --java      <java>               installed java path.
+      optional:
+          --minmap_arg <minmap2 args>      for example, --minmap_arg ' -x ava-ont'
+                                           arg must be wraped by ' '
+          --tgstype   <pb/ont>             TGS type. ont by default.
+          --min_idy   <float>              min_idy for filtering TGS reads .
+                                           0.3 for ont by default.
+                                           0.2 for pb by default.
+          --min_match <int>                min match length for filtering TGS reads .
+                                           300bp for ont by default.
+                                           200bp for pb by default.
+          --thread    <int>                threads uesd. 16 by default.
+          --chunk     <int>                split candidates into chunks to separately do error correction.
+          --pilon_mem <int>                memory used for pilon. 300G for default.
+          --p_round   <int>                iteration # of error corretion by pilon. 3 by default.
+          --r_round   <int>                iteration # of error corretion by racon. 1 by default.
+          --g_check                        gapsize diff check. off by default.
+          --min_nread <int>                minimum number of reads that can bridge this gap. 1 by default.
+          --max_nread <int>                maximum number of reads that can bridge this gap. -1 by default.
+          --max_candidate <int>            maximum number of candidate alignment used for error correction and gapfilling. 10 by default

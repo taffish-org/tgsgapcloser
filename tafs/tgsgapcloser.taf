@@ -1,0 +1,9 @@
++TOOL:tgsgapcloser
+ARGS
+    <else>
+        tgsgapcloser
+    <main>
+        tgsgapcloser ::*APP-ARGS*::
+RUN
+    <container:taf-tgsgapcloser-v1.2.1:ghcr.io/taffish-org/tgsgapcloser:1.2.1>
+        ::*MAIN*::
